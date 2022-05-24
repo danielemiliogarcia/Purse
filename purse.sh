@@ -11,7 +11,8 @@ umask 077
 
 encrypt_index="false"
 now=$(date +%s)
-copy="$(command -v xclip || command -v pbcopy)"
+copy_old="$(command -v xclip || command -v pbcopy)"
+copy="${copy_old} -sel clip"
 gpg="$(command -v gpg || command -v gpg2)"
 gpgconf="${HOME}/.gnupg/gpg.conf"
 backuptar="${PURSE_BACKUP:=purse.$(hostname).$(date +%F).tar}"
